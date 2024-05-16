@@ -35,29 +35,23 @@ const NameForm = () => {
       <h2>Enter Your Name</h2>
       <form onSubmit={handleSubmit}>
         <div className="input-container">
-          <label htmlFor="firstName" style={{ display: 'inline-block', marginRight: '10px' }}>
-            First Name:
-          </label>
+          <label htmlFor="firstName">First Name:</label>
           <input
             type="text"
             id="firstName"
             value={firstName}
             onChange={handleFirstNameChange}
-            style={{ padding: '10px', width: '200px', display: 'inline-block' }}
-            required
+            required // Input is required
           />
         </div>
         <div className="input-container">
-          <label htmlFor="lastName" style={{ display: 'inline-block', marginRight: '10px' }}>
-            Last Name:
-          </label>
+          <label htmlFor="lastName">Last Name:</label>
           <input
             type="text"
             id="lastName"
             value={lastName}
             onChange={handleLastNameChange}
-            style={{ padding: '10px', width: '200px', display: 'inline-block' }}
-            required
+            required // Input is required
           />
         </div>
         {formError && <p className="error-message">Please fill in both fields.</p>}
@@ -65,10 +59,8 @@ const NameForm = () => {
       </form>
       {fullName && (
         <div className="full-name-container">
-          <h2 style={{ display: 'inline-block', marginRight: '10px' }}>Full Name:</h2>
-          <p className="full-name" style={{ display: 'inline-block', fontWeight: 'bold' }}>
-            {fullName}
-          </p>
+          <h2>Full Name Display</h2>
+          <p>{`Full Name: ${fullName}`}</p>
         </div>
       )}
     </div>
